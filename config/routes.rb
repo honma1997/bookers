@@ -2,7 +2,7 @@
 Rails.application.routes.draw do
 
   get '/top' => 'homes#top'
-
+  root to: 'lists#index'
   resources :lists
 
 end
