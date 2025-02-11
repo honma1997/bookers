@@ -4,7 +4,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     if @book.save
       # 3. フラッシュメッセージを定義し、詳細画面へリダイレクト
-      flash[:notice] = "successfully"
+      flash[:notice] = "Book was successfully created."
       redirect_to book_path(@book.id)
     else
       # 3. フラッシュメッセージを定義し、new.html.erbを描画する
@@ -30,10 +30,9 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-      flash[:notice] = "Successfully"
+      flash[:notice] = "Book was successfully updated"
       redirect_to book_path(@book.id)
     else
-      flash.now[:notice] = "failed."
       render :edit
     end
     
