@@ -43,7 +43,7 @@ class BooksController < ApplicationController
     book = Book.find(params[:id])  # データ（レコード）を1件取得
     book.destroy  # データ（レコード）を削除
     flash[:notice] = "Successfully"
-    redirect_to '/book'  # 投稿一覧画面へリダイレクト  
+    redirect_to '/books'  # 投稿一覧画面へリダイレクト  
   end
 
   # ストロングパラメータ
